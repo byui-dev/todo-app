@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced to-do App</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Header Content-->
+        <header>
+            <h1>Enhanced To-Do App</h1>
+            <p class="lead">Manage your tasks efficiently</p>
+        </header>
+
+        <section class="todo-section" aria-labelledby="todo-heading">
+            <h2 id="todo-heading" class="sr-only">To‑do</h2>
+
+            <form id="task-form" class="task-form" aria-label="Add new task">
+                <div class="form-row">
+                    <label for="task-title" class="sr-only">Task</label>
+                    <input id="task-title" name="title" type="text" placeholder="Add a new task..." required
+                        autocomplete="off">
+
+                    <label for="task-date" class="sr-only">Due date</label>
+                    <input id="task-date" name="due" type="date">
+
+                    <label for="task-priority" class="sr-only">Priority</label>
+                    <select id="task-priority" name="priority" aria-label="Priority">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+
+                    <button type="submit" id="add-btn" class="btn">Add</button>
+                </div>
+            </form>
+
+            <div class="controls">
+                <div class="filters" role="toolbar" aria-label="Task filters">
+                    <button data-filter="all" class="filter active">All</button>
+                    <button data-filter="active" class="filter">Active</button>
+                    <button data-filter="completed" class="filter">Completed</button>
+                </div>
+
+                <div class="search-sort">
+                    <input id="search" type="search" placeholder="Search tasks..." aria-label="Search tasks">
+                    <select id="sort" aria-label="Sort tasks">
+                        <option value="manual">Manual</option>
+                        <option value="due-asc">Due ↑</option>
+                        <option value="due-desc">Due ↓</option>
+                        <option value="priority-desc">Priority</option>
+                    </select>
+                </div>
+            </div>
+
+            <ul id="task-list" class="task-list" aria-live="polite"></ul>
+
+            <div class="footer">
+                <span id="stats" class="stats">0 tasks</span>
+                <button id="clear-completed" class="btn small">Clear completed</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="./script.js" defer></script>
+</body>
+
+</html>
